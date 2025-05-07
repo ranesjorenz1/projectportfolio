@@ -3,12 +3,182 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>My Portfolio</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background: #f4f4f4;
+        color: #333;
+      }
+
+      header {
+        background: #222;
+        color: #fff;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1000px;
+        margin: auto;
+        padding: 0 20px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+      }
+
+      .hero {
+        background: #007acc;
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      section {
+        padding: 40px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .project-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 500px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      form button {
+        background: #007acc;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #222;
+        color: white;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <h1 class="lorem">HELLO WORLD</h1>
-    </div>
+    <header>
+      <nav>
+        <div class="logo">John Doe</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Hello, I'm John Doe</h1>
+      <p>Front-end Developer | JavaScript Enthusiast</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate web developer who loves clean code and elegant design.
+        With 5 years of experience, I specialize in HTML, CSS, and JavaScript.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>Built with vanilla HTML, CSS, and JS.</p>
+        </div>
+        <div class="project-card">
+          <h3>Todo App</h3>
+          <p>A simple JavaScript-powered todo list.</p>
+        </div>
+        <div class="project-card">
+          <h3>Weather App</h3>
+          <p>Fetches real-time weather using OpenWeatherMap API.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>&copy; 2025 John Doe. All rights reserved.</footer>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+        alert("Thanks for your message!");
+      }
+    </script>
   </body>
 </html>
